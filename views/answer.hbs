@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+
+    <nav>
+        <div id="leftnav">
+           <a href="/"> Homeworkdone</a>
+        </div>
+        <div id="rightnav">
+            <a href="/">Home</a>
+        </div>
+    </nav>
+    {{!-- <hr width="100%"    > --}}
+    <div id="titleDiv">
+        {{quesTitle}}
+    </div>
+    {{#if videoUrl}}
+        <div id="videoDiv">
+            <video width="640" height="480" controls>
+                <source src='{{videoUrl}}' type="video/webm">
+            </video>
+        </div>
+    {{/if}}
+    <footer>
+        <p>© Homeworkdone.Tech 2023</p>
+    </footer>
+</body>
+</html>

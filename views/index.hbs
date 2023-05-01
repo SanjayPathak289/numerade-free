@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get free Q/A Answers free. The only tool that gives homework answers free. Enter the link and get answers instantly !"/>
+    <title>Homework Done | Get Free Q&amp;A Answers 2023 | Homework help Online</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    
+    <nav>
+        <div id="leftnav">
+            <a href="/">
+            <img src="/img/favicon.ico" alt="Icon"> 
+               Homeworkdone
+            </a> 
+        </div>
+        <div id="rightnav">
+           <a href="/">Home</a>
+        </div>
+    </nav>
+    {{!-- <hr width="100%"> --}}
+
+
+    <div id="container">
+        <i class="fas fa-book"></i>
+        <i class="fas fa-university"></i>
+        <i class="fas fa-book-open"></i>
+        <i class="fas fa-school"></i>
+        <div id="explain">
+            <p>The only tool that gives homework answers free !</p>
+            <p>Enter the link and get answers instantly !</p>
+
+        </div>
+
+
+        <form action="/answer" method="post">
+            <div id="form_div">
+                <input type="text" name="query" id="linkInput" placeholder="Paste your Question Link here..." autocomplete="off" required>
+                <button type="submit" id="submitBtn">Submit</button>
+            </div>
+        </form>
+
+        {{#if invalidLink}}
+        <div id="invalidUpper">
+            <div id="invalid">
+                <p>
+                    Invalid Link / Answer Not Found
+                </p>
+                <span><button id="crossBtn">X</button></span>
+            </div>
+
+        </div>
+        {{/if}}
+
+        <div id="bulb">
+                <div style="width: 5%;">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div>
+                   <p> Currently we have solutions of some website but we are coming with many new ones</p>
+                </div>
+                
+            
+        </div>
+        <div id="disclaimer">
+            
+            <h2 style="text-align: center;margin-bottom:1rem">Disclaimer</h4>
+            <hr width="100%" style="margin-bottom: 1rem;">
+            <p>While many homework website ask for subscription we made this website to help students study effectively at no cost.We do not allow use of scraping bots, automation tools or sending automated requests to our site. If our system detects any unusual activity on your account, it will get you banned. Homeworkdone search engine designed to work better than a normal search engine. Here you may be able to find solutions to many of the questions which are not available in the other search engines. We try our best to keep this site free forever.</p>
+        </div>
+
+    </div>
+    
+    <footer>
+        <p>© Homeworkdone.Tech 2023</p>
+    </footer>
+    <script>
+        const crossBtn = document.getElementById("crossBtn");
+        const invalid = document.getElementById("invalid");
+        crossBtn.addEventListener("click",() => {
+            invalid.style.display = "none";
+        })
+    </script>
+</body>
+</html>
