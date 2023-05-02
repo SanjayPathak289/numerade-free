@@ -1,7 +1,9 @@
 const express = require("express");
 const axios = require("axios");
 const path = require("path");
+const serverless = require("serverless-http");
 const app = express();
+const router = express.Router();
 app.set("view engine", "hbs")
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -11,7 +13,7 @@ app.use(express.static(staticPath));
 
     
 
-    app.post("/answer",async(req,res) => {
+router.post("/answer",async(req,res) => {
 
                 let str;
                 let quesTitle;
@@ -52,10 +54,13 @@ app.use(express.static(staticPath));
 
             })
             
-app.get("/", (req,res) => {
+    router.get("/", (req,res) => {
 
     res.render("index")
 })
-app.listen(8000,(req,res) => {
-    console.log("Server listening");
-})
+
+app.use('/.netlify/functions/app', router);
+module.exports.handler = serverless(app);
+// app.listen(8000,(req,res) => {
+//     console.log("Server listening");
+// })
