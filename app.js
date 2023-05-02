@@ -1,16 +1,10 @@
-// const express = require("express");
-import { express } from "express";
-import { axios } from "axios";
-import { path } from "path";
-// const axios = require("axios");
-// const path = require("path");
+const express = require("express");
+const axios = require("axios");
+const path = require("path");
 const app = express();
-// const request = require("request");
-// const { log } = require("console");
 app.set("view engine", "hbs")
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
 const staticPath = path.join(__dirname, "/public");
 app.use(express.static(staticPath));
 
